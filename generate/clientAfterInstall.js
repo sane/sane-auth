@@ -1,0 +1,1 @@
+// frontendAfterInstall.js

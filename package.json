@@ -1,0 +1,30 @@
+{
+  "name": "sane-jwt-auth",
+  "version": "0.1.0",
+  "description": "A Sane Stack Addon giving you basic JWT authentication for the full stack",
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha -b"
+  },
+  "keywords": [
+    "sane-jwt-auth",
+    "machines",
+    "machinepack",
+    "sane-addon",
+    "authentication",
+    "JWT",
+    "sane-stack"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies":{
+    "machine": "^2.0.5"
+  },
+  "devDependencies": {
+    "mocha": "^2.1.0"
+  },
+  "machinepack": {
+    "friendlyName": "sane-jwt-auth",
+    "machineDir": "generate/",
+    "machines": ["client", "server"]
+  }
+}
