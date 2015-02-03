@@ -55,7 +55,10 @@ module.exports = {
 
     // Return an object containing the commands to run by the generator
     return exits.success({
-      addNpmPackages:  [{ name: 'ember-cli-sass', target: '~3.0.3'}],
+      addNpmPackages:  [
+      { name: 'ember-cli-simple-auth', target: '~0.7.2'},
+      { name: 'npm i ember-cli-simple-auth-oauth2', target: '~0.7.2'}
+      ],
       addBowerPackages: [{ name: 'foundation', target: '~5.5.0'}],
       commands: [`ember g resource ${inputs.name} ${inputs.attributes}`]
     });
