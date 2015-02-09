@@ -9,20 +9,14 @@ module.exports = {
   inputs: {
 
     name: {
-
       example: 'user',
-
       description: 'Name of the resource',
-
       required: true
     },
 
     attributes: {
-
       example: 'name:string age:number',
-
       description: 'extra attributes that will be generated',
-
       required: false
     }
 
@@ -39,6 +33,8 @@ module.exports = {
     success: {
       example:  {
         addNpmPackages: [{}],
+        addEmberAddon: [{}],
+        addToConfig: [{}],
         addBowerPackages: [{}],
         commands: [""]
       }
@@ -55,12 +51,22 @@ module.exports = {
 
     // Return an object containing the commands to run by the generator
     return exits.success({
-      addNpmPackages:  [
-      { name: 'ember-cli-simple-auth', target: '~0.7.2'},
-      { name: 'npm i ember-cli-simple-auth-oauth2', target: '~0.7.2'}
+      addEmberAddon:  [
+      { name: 'ember-cli-simple-auth', target: '~0.7.3'},
+      { name: 'ember-cli-simple-auth-oauth2', target: '~0.7.3'}
       ],
-      addBowerPackages: [{ name: 'foundation', target: '~5.5.0'}],
-      commands: [`ember g resource ${inputs.name} ${inputs.attributes}`]
+      addToConfig: {
+        ENV : {
+          'simple-auth': {
+            authorizer: 'simple-auth-authorizer:oauth2-bearer'
+          },
+          'simple-auth-oauth2': {
+            serverTokenEndpoint: '/api/v1/auths/login',
+            serverTokenRevocationEndpoint: '/api/v1/auths/logout',
+          }
+        }
+      }
+      commands: ['ember g resource user username:string']
     });
 
   }

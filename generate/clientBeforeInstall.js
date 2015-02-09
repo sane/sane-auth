@@ -1,1 +1,0 @@
-// frontendBeforeInstall.js

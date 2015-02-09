@@ -1,1 +1,0 @@
-Doesn't everyone nned a second readme in their ember app?
