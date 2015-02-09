@@ -1,0 +1,10 @@
+{
+  "machine": "client",
+  "expectations": [
+    {
+      "todo": true,
+      "using": {},
+      "outcome": "success"
+    }
+  ]
+}
