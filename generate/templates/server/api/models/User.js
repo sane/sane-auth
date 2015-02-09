@@ -17,6 +17,8 @@ var bcrypt = require('bcrypt');
       unique: true
     },
 
+    //You might want to put this into it's own model if you want to support
+    //social logins but keep the same account
     password: {
       type: 'string',
       required: true
@@ -33,16 +35,16 @@ var bcrypt = require('bcrypt');
 
   //salt the password before it gets saved
   beforeCreate: function(user, cb) {
-    bcrypt.genSalt(10, function(err, salt) {
-      bcrypt.hash(user.password, salt, function(){}, function(err, hash) {
-        if (err) {
-          console.log(err);
-          cb(err);
-        }else{
-          user.password = hash;
-          cb(null, user);
-        }
-      });
-    });
-  }
+          bcrypt.genSalt(10, function(err, salt) {
+              bcrypt.hash(user.password, salt, function(err, hash) {
+                  if (err) {
+                      console.log(err);
+                      cb(err);
+                  } else {
+                      user.password = hash;
+                      cb(null, user);
+                  }
+              });
+          });
+      }
 };

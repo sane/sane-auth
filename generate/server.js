@@ -56,8 +56,6 @@ module.exports = {
     return exits.success({
       addNpmPackages:  [
       { name: 'bcrypt', target: '~0.8.1'},
-      { name: 'passport', target: '~0.2.1'},
-      { name: 'passport-local', target: '~1.0.0'},
       { name: 'express-jwt', target: '~1.0.0'},
       { name: 'jsonwebtoken', target: '~3.2.2'},
       ],

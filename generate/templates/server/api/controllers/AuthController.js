@@ -1,7 +1,9 @@
-var passport = require('passport');
 var jwt = require('jsonwebtoken');
-//Change this secret. Same as in the hasToken policy
+var _ = require('lodash');
+//change the scretes here as well as in policies/hasToken.js
 var secret = '**n0t-S0-s3cr3t-K3y!';
+var refreshSecret = 'r3Fr3sh-K3y*!';
+var bcrypt = require('bcrypt');
 /**
  * AuthController
  *
@@ -20,41 +22,89 @@ var secret = '**n0t-S0-s3cr3t-K3y!';
  */
 
 module.exports = {
-  //With sails actions turned on this route is available at localhost:1337/api/v1/auth/login
-  login: function(req, res) {
-    passport.authenticate('local', function(err, user, info) {
-      if ((err) || (!user)) {
-        res.send({
-          success: false,
-          message: 'invalidPassword'
-        });
-        return;
-      } else {
-        if (err) {
-          res.send({
-            success: false,
-            message: 'unknownError',
-            error: err
-          });
-        } else {
-          var token = jwt.sign(user, secret, { expiresInMinutes: 60*24 });
-          res.send({
-            success: true,
-            user: user,
-            token: token
-          });
-        }
-      }
-    })(req, res);
-  },
+    login: function(req, res) {
 
-  //Logout at localhost:1337/api/v1/auth/logout
-  logout: function(req, res) {
-    req.logout();
-    res.send({
-      success: true,
-      message: 'logoutSuccessful'
-    });
-  },
-  _config: {}
+        if (req.body.grant_type === 'password') {
+
+            User.findByUsername(req.body.username).exec(function(err, user) {
+                if (err) {
+                    res.badRequest({
+                        error: err
+                    });
+                }
+                if (!user || user.length < 1) {
+                    res.badRequest({
+                        error: 'No such user'
+                    });
+                }
+
+                bcrypt.compare(req.body.password, user[0].password, function(err, result) {
+                    if (err || !result) {
+                        res.badRequest({
+                            error: 'invalidPassword'
+                        });
+                    } else {
+                        issueTokens(user, res);
+                    }
+                });
+            });
+
+        } else if (req.body.grant_type === 'refresh_token' && req.body.refresh_token) {
+
+            var token, user;
+
+            if (req.headers && req.headers.authorization) {
+                var parts = req.headers.authorization.split(' ');
+                if (parts.length == 2) {
+                    var scheme = parts[0],
+                        credentials = parts[1];
+
+                    if (/^Bearer$/i.test(scheme)) {
+                        token = credentials;
+                    }
+                } else {
+
+                }
+            }
+            var bearerToken, refreshToken;
+
+            bearerToken = jwt.verify(token, secret);
+            refreshToken = jwt.verify(req.body.refresh_token, refreshSecret);
+
+            if (_.isEqual(bearerToken, refreshToken)) {
+                delete bearerToken.exp;
+                delete bearerToken.iat;
+
+                user = bearerToken;
+                issueTokens(user, res);
+            };
+        }
+    },
+
+    logout: function(req, res) {
+        req.logout();
+        res.send({
+            success: true,
+            message: 'logoutSuccessful'
+        });
+    }
 };
+
+function issueTokens(user, res) {
+    var expirationTimeInMinutes = 60 * 2;
+
+    var token = jwt.sign(user, secret, {
+        expiresInMinutes: expirationTimeInMinutes
+    });
+
+    var refreshToken = jwt.sign(user, refreshSecret, {
+        expiresInMinutes: expirationTimeInMinutes
+    });
+
+    res.send({
+        user: user[0],
+        access_token: token,
+        expires_in: expirationTimeInMinutes * 60, // because simple auth expects seconds
+        refresh_token: refreshToken
+    });
+}
