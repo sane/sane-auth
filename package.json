@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A Sane Stack Addon giving you basic JWT authentication for the full stack",
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha -b"
+    "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
   },
   "keywords": [
     "sane-jwt-auth",
@@ -16,15 +16,23 @@
   ],
   "author": "",
   "license": "MIT",
-  "dependencies":{
-    "machine": "^2.0.5"
+  "dependencies": {
+    "machine": "~4.0.0"
   },
   "devDependencies": {
-    "mocha": "^2.1.0"
+    "test-machinepack-mocha": "^0.2.3"
   },
   "machinepack": {
     "friendlyName": "sane-jwt-auth",
     "machineDir": "generate/",
-    "machines": ["client", "server"]
+    "machines": [
+      "client",
+      "server"
+    ],
+    "testsUrl": "https://travis-ci.org/Globegitter/sane-jwt-auth"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Globegitter/sane-jwt-auth.git"
   }
 }
