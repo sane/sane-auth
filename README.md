@@ -5,18 +5,18 @@
 
 ### [Docs](http://node-machine.org/sane-jwt-auth) &nbsp; [Browse other machines](http://node-machine.org/machinepacks) &nbsp;  [FAQ](http://node-machine.org/implementing/FAQ)  &nbsp;  [Newsgroup](https://groups.google.com/forum/?hl=en#!forum/node-machine)
 
-A Sane Stack Addon giving you basic JWT authentication for the full stack
+A Sane Stack Addon giving you basic OAauth2-JWT authentication for the full stack
 
 
-## Installation &nbsp; [![NPM version](https://badge.fury.io/js/sane-jwt-auth.svg)](http://badge.fury.io/js/sane-jwt-auth) [![Build Status](https://travis-ci.org/mikermcneil/sane-jwt-auth.png?branch=master)](https://travis-ci.org/mikermcneil/sane-jwt-auth)
+## Installation &nbsp; [![NPM version](https://badge.fury.io/js/sane-jwt-auth.svg)](http://badge.fury.io/js/sane-auth) [![Build Status](https://travis-ci.org/mikermcneil/sane-jwt-auth.png?branch=master)](https://travis-ci.org/mikermcneil/sane-auth)
 
 ```sh
-$ npm install sane-jwt-auth
+$ sane install sane-auth
 ```
 
 ## Usage
 
-For the latest usage documentation, version information, and test status of this module, see <a href="http://node-machine.org/sane-jwt-auth" title="A Sane Stack Addon giving you basic JWT authentication for the full stack (for node.js)">http://node-machine.org/sane-jwt-auth</a>.  The generated manpages for each machine contain a complete reference of all expected inputs, possible exit states, and example return values.  If you need more help, or find a bug, jump into [Gitter](https://gitter.im/node-machine/general) or leave a message in the project [newsgroup](https://groups.google.com/forum/?hl=en#!forum/node-machine).
+For the latest usage documentation, version information, and test status of this module, see <a href="http://node-machine.org/sane-auth" title="A Sane Stack Addon giving you basic JWT authentication for the full stack (for node.js)">http://node-machine.org/sane-auth</a>.  The generated manpages for each machine contain a complete reference of all expected inputs, possible exit states, and example return values.  If you need more help, or find a bug, jump into [Gitter](https://gitter.im/node-machine/general) or leave a message in the project [newsgroup](https://groups.google.com/forum/?hl=en#!forum/node-machine).
 
 ## About  &nbsp; [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/node-machine/general?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -27,4 +27,3 @@ Learn more at <a href="http://node-machine.org/implementing/FAQ" title="Machine 
 ## License
 
 MIT &copy; 2015 contributors
-
