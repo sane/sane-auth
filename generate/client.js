@@ -65,7 +65,7 @@ module.exports = {
             serverTokenRevocationEndpoint: '/api/v1/auths/logout',
           }
         }
-      }
+      },
       commands: ['ember g resource user username:string']
     });
 
