@@ -1,35 +1,28 @@
 module.exports = {
 
   friendlyName: 'Sane frontend logic',
-
   description: 'Handle the addon logic for the sane frontend',
-
   extendedDescription: 'This example machine is part of machinepack-boilerplate, used to introduce everyone to machines.',
 
   inputs: {
-
     name: {
       example: 'user',
       description: 'Name of the resource',
       required: false
     },
-
     attributes: {
       example: 'name:string age:number',
       description: 'extra attributes that will be generated',
       required: false
     }
-
   },
 
   defaultExit: 'success',
 
   exits: {
-
     error: {
       description: 'An unexpected error occurred.'
     },
-
     success: {
       example:  {
         addNpmPackages: [{}],
