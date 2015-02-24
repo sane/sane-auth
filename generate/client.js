@@ -11,7 +11,7 @@ module.exports = {
     name: {
       example: 'user',
       description: 'Name of the resource',
-      required: true
+      required: false
     },
 
     attributes: {
