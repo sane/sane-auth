@@ -26,7 +26,7 @@ module.exports = {
     success: {
       example:  {
         addNpmPackages: [{}],
-        addEmberAddon: [{}],
+        addEmberAddons: [{}],
         addToConfig: [{}],
         addBowerPackages: [{}],
         commands: [""]
@@ -44,7 +44,7 @@ module.exports = {
 
     // Return an object containing the commands to run by the generator
     return exits.success({
-      addEmberAddon:  [
+      addEmberAddons: [
       { name: 'ember-cli-simple-auth', target: '~0.7.3'},
       { name: 'ember-cli-simple-auth-oauth2', target: '~0.7.3'}
       ],
