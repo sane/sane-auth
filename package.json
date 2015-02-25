@@ -1,6 +1,6 @@
 {
   "name": "sane-auth",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "A Sane Stack Addon giving you basic OAauth2-JWT authentication for the full stack",
   "scripts": {
     "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
