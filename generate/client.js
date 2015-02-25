@@ -29,7 +29,7 @@ module.exports = {
         addEmberAddons: [{}],
         addToConfig: [{}],
         addBowerPackages: [{}],
-        generate: [{
+        generates: [{
           type: 'model',
           name: 'userInput'
           parameters: 'name:string description:string'
@@ -65,7 +65,7 @@ module.exports = {
       },
       //runs ember generate <string> command.
       //could take parameters such as 'resource ' + inputs.resourceName ''
-      generate: [{
+      generates: [{
         type: 'resource'
         name: 'user',
         parameters: 'username:string'
