@@ -1,9 +1,7 @@
 var jwt = require('jsonwebtoken');
 var _ = require('lodash');
-//change the scretes here as well as in policies/hasToken.js
-var secret = '**n0t-S0-s3cr3t-K3y!';
-var refreshSecret = 'r3Fr3sh-K3y*!';
 var bcrypt = require('bcrypt');
+
 /**
  * AuthController
  *
@@ -68,8 +66,8 @@ module.exports = {
             }
             var bearerToken, refreshToken;
 
-            bearerToken = jwt.verify(token, secret);
-            refreshToken = jwt.verify(req.body.refresh_token, refreshSecret);
+            bearerToken = jwt.verify(token, sails.config.jwt.secret);
+            refreshToken = jwt.verify(req.body.refresh_token, sails.config.jwt.refresh_secret);
 
             if (_.isEqual(bearerToken, refreshToken)) {
                 delete bearerToken.exp;
@@ -93,11 +91,11 @@ module.exports = {
 function issueTokens(user, res) {
     var expirationTimeInMinutes = 60 * 2;
 
-    var token = jwt.sign(user, secret, {
+    var token = jwt.sign(user, sails.config.jwt.secret, {
         expiresInMinutes: expirationTimeInMinutes
     });
 
-    var refreshToken = jwt.sign(user, refreshSecret, {
+    var refreshToken = jwt.sign(user, sails.config.jwt.refresh_secret, {
         expiresInMinutes: expirationTimeInMinutes
     });
 

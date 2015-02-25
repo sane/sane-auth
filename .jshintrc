@@ -28,9 +28,10 @@
   // i.e. allow code like:
   //  (new (function OneTimeUsePrototype () { } ))
   "supernew": true,
-  
+
   // Allow backwards, node-dependency-style commas
-  "laxcomma": true
+  "laxcomma": true,
+  "asi": true,
 
   // "bitwise": true,
   // "camelcase": true,
@@ -45,7 +46,6 @@
   // "plusplus": true,
   // "quotmark": "single",
   // "trailing": true,
-  // "asi": false,
   // "eqnull": true,
   // "eval": true,
   // "sub": true,
