@@ -27,7 +27,7 @@ module.exports = {
       example:  {
         addNpmPackages: [{}],
         addEmberAddons: [{}],
-        addToConfig: [{}],
+        addToConfig: {},
         addBowerPackages: [{}],
         generates: [{
           type: 'model',

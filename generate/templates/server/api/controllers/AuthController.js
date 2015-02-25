@@ -89,7 +89,7 @@ module.exports = {
 };
 
 function issueTokens(user, res) {
-    var expirationTimeInMinutes = 60 * 2;
+    var expirationTimeInMinutes = sails.config.jwt.expiration_time_in_minutes;
 
     var token = jwt.sign(user, sails.config.jwt.secret, {
         expiresInMinutes: expirationTimeInMinutes
