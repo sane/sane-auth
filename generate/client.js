@@ -63,8 +63,7 @@ module.exports = {
           }
         }
       },
-      //runs ember generate <string> command.
-      //could take parameters such as 'resource ' + inputs.resourceName ''
+      //runs ember generate <type> <name> <parameters> command for each object in the array
       generates: [{
         type: 'resource'
         name: 'user',
