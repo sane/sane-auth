@@ -1,17 +1,23 @@
 <h1>
   <a href="http://node-machine.org" title="Node-Machine public registry"><img alt="node-machine logo" title="Node-Machine Project" src="http://node-machine.org/images/machine-anthropomorph-for-white-bg.png" width="50" /></a>
-  sane-jwt-auth
+  sane-auth
 </h1>
 
-### [Docs](http://node-machine.org/sane-jwt-auth) &nbsp; [Browse other machines](http://node-machine.org/machinepacks) &nbsp;  [FAQ](http://node-machine.org/implementing/FAQ)  &nbsp;  [Newsgroup](https://groups.google.com/forum/?hl=en#!forum/node-machine)
+### [Docs](http://node-machine.org/sane-auth) &nbsp; [Browse other machines](http://node-machine.org/machinepacks) &nbsp;  [FAQ](http://node-machine.org/implementing/FAQ)  &nbsp;  [Newsgroup](https://groups.google.com/forum/?hl=en#!forum/node-machine)
 
 A Sane Stack Addon giving you basic OAauth2-JWT authentication for the full stack
 
 
-## Installation &nbsp; [![NPM version](https://badge.fury.io/js/sane-jwt-auth.svg)](http://badge.fury.io/js/sane-auth) [![Build Status](https://travis-ci.org/mikermcneil/sane-jwt-auth.png?branch=master)](https://travis-ci.org/mikermcneil/sane-auth)
+## Installation &nbsp; [![NPM version](https://badge.fury.io/js/sane-auth.svg)](http://badge.fury.io/js/sane-auth) [![Build Status](https://travis-ci.org/globegitter/sane-auth.png?branch=master)](https://travis-ci.org/globegitter/sane-auth)
 
+If you want to to test this addon you first need to install the latest sane-cli with addon support:
 ```sh
-$ sane install sane-auth
+npm install  -g sane@alpha
+```
+
+Then within your SANE project:
+```sh
+sane install sane-auth
 ```
 
 ## Usage
