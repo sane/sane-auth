@@ -1,6 +1,6 @@
 {
   "name": "sane-auth",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A Sane Stack Addon giving you basic OAauth2-JWT authentication for the full stack",
   "scripts": {
     "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
@@ -30,10 +30,10 @@
       "client",
       "server"
     ],
-    "testsUrl": "https://travis-ci.org/Globegitter/sane-auth"
+    "testsUrl": "https://travis-ci.org/sane/sane-auth"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Globegitter/sane-auth.git"
+    "url": "git@github.com:sane/sane-auth.git"
   }
 }
