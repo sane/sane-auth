@@ -12,7 +12,7 @@ A Sane Stack Addon giving you basic OAauth2-JWT authentication for the full stac
 
 If you want to to test this addon you first need to install the latest sane-cli with addon support:
 ```sh
-npm install  -g sane-cli@alpha
+npm install -g sane-cli@alpha
 ```
 
 Then within your SANE project:
