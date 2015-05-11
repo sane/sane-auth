@@ -5,17 +5,17 @@
   <form {{action 'createUser' model on='submit' }}>
     <div>
       <label for="username">Username</label>
-      {{input id='username' placeholder='Enter your email' type='email' class='form-control' value=username}}
+      {{input id='username' placeholder='Enter your email' type='email' class='form-control' value=model.username}}
     </div>
     <div>
       <label for="password">Password</label>
-      {{input id='password' placeholder='Enter password' class='form-control' type='password' value=password}}
+      {{input id='password' placeholder='Enter password' class='form-control' type='password' value=model.password}}
     </div>
     <button type="submit">Register</button>
   </form>
   <div>
-    {{#if errorMessage}}
-      <strong>Registration failed:</strong>{{errorMessage}}
+    {{#if model.errorMessage}}
+      <strong>Registration failed:</strong>{{model.errorMessage}}
     {{/if}}
   </div>
 </div>
