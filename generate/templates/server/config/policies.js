@@ -27,7 +27,9 @@ module.exports.policies = {
    ***************************************************************************/
 
   '*': "hasToken",
-
+  AppController: {
+    'serve': true
+  },
   UserController: {
     "create": true,
   },
