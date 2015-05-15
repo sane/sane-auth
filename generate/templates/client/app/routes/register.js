@@ -17,7 +17,7 @@ export default Ember.Route.extend({
           }
         }),
         contentType: 'application/json'
-      }).then(function(response) {
+      }).then(function(/*response*/) {
         _this.transitionTo('login');
 
       }, function(xhr, status, error) {
