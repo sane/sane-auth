@@ -30,8 +30,18 @@ For the latest usage documentation, version information, and test status of this
     # customize/improve sane-auth
     npm link
     cd your-sane-project-folder/
+
+If this is the first time that you install `sane-auth` in your project,
+open the file `package.json` and add the following in the dependencies section:
+
+    "sane-auth": "*"
+
+You can leave the `*` or use the version number of your preference.
+
     npm link sane-auth
     sane generate sane-auth
+
+Execute the `generate` command each time you want to apply your `sane-auth` changes to your sane project.
 
 ## About  &nbsp; [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/artificialio/sane)
 
