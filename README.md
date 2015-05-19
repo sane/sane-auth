@@ -24,6 +24,15 @@ sane install sane-auth
 
 For the latest usage documentation, version information, and test status of this module, see <a href="http://node-machine.org/sane-auth" title="A Sane Stack Addon giving you basic JWT authentication for the full stack (for node.js)">http://node-machine.org/sane-auth</a>.  The generated manpages for each machine contain a complete reference of all expected inputs, possible exit states, and example return values.  If you need more help, or find a bug, jump into [Gitter](https://gitter.im/node-machine/general) or leave a message in the project [newsgroup](https://groups.google.com/forum/?hl=en#!forum/node-machine).
 
+## Development
+
+    git clone <repo>
+    # customize/improve sane-auth
+    npm link
+    cd your-sane-project-folder/
+    npm link sane-auth
+    sane generate sane-auth
+
 ## About  &nbsp; [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/artificialio/sane)
 
 This is a [machinepack](http://node-machine.org/machinepacks), an NPM module which exposes a set of related Node.js [machines](http://node-machine.org/spec/machine) according to the [machinepack specification](http://node-machine.org/spec/machinepack).
