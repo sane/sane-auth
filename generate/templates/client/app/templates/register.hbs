@@ -13,9 +13,31 @@
     </div>
     <button type="submit">Register</button>
   </form>
+
   <div>
-    {{#if model.errorMessage}}
-      <strong>Registration failed:</strong>{{model.errorMessage}}
+    {{#if errorResponse}}
+      <strong>Registration failed:</strong> {{errorResponse.summary}}
+      {{#if errorResponse.invalidAttributes}}
+
+        {{#if errorResponse.invalidAttributes.username}}
+          <br>
+          invalid username
+          {{#each error in errorResponse.invalidAttributes.username}}
+            <br>
+            {{error.rule}}: {{error.message}}
+          {{/each}}
+        {{/if}}
+
+        {{#if errorResponse.invalidAttributes.password}}
+          <br>
+          invalid password
+          {{#each error in errorResponse.invalidAttributes.password}}
+            <br>
+            {{error.rule}}: {{error.message}}
+          {{/each}}
+        {{/if}}
+      {{/if}}
     {{/if}}
   </div>
+
 </div>
